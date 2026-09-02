@@ -1,4 +1,4 @@
-const CACHE = 'qingque-mahjong-v8';
+const CACHE = 'qingque-mahjong-v8.1';
 const TILE_FILES = ['m','p','s'].flatMap(s=>Array.from({length:9},(_,i)=>`assets/tiles/${s}${i+1}.png`)).concat(Array.from({length:7},(_,i)=>`assets/tiles/z${i+1}.png`));
 const APP_FILES = ['./','./index.html','./manifest.webmanifest','./assets/icons/icon-192.png','./assets/icons/icon-512.png',...TILE_FILES.map(x=>'./'+x)];
 self.addEventListener('install',event=>event.waitUntil(caches.open(CACHE).then(cache=>cache.addAll(APP_FILES)).then(()=>self.skipWaiting())));
